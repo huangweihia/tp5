@@ -233,11 +233,14 @@ return [
         // 是否使用 setcookie
         'setcookie' => true,
     ],
-
     //分页配置
     'paginate'               => [
         'type'      => 'bootstrap',
         'var_page'  => 'page',
         'list_rows' => 15,
+    ],
+    'tpl_replace_string' => [
+        'footer'=>THINK_PATH.'admin\public\footer.html',
+        'header'=>THINK_PATH.'admin\public\header.html'
     ],
 ];
