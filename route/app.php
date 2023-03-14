@@ -2,18 +2,16 @@
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006~2019 http://thinkphp.cn All rights reserved.
+// | Copyright (c) 2006~2018 http://thinkphp.cn All rights reserved.
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-// $Id$
+use think\facade\Route;
 
-if (is_file($_SERVER["DOCUMENT_ROOT"] . $_SERVER["SCRIPT_NAME"])) {
-    return false;
-} else {
-    $_SERVER["SCRIPT_FILENAME"] = __DIR__ . '/index.php';
+// 获取当前计数
+Route::get('/api/count', 'index/getCount');
 
-    require __DIR__ . "/index.php";
-}
+// 更新计数，自增或者清零
+Route::post('/api/count', 'index/updateCount');
